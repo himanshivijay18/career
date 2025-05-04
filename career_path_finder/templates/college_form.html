@@ -1,0 +1,160 @@
+{% extends 'layout.html' %}
+
+{% block title %}College Student Assessment - NextStep{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">College Student Assessment</h1>
+            <p class="lead text-muted">Answer the questions below to help us recommend the best career path for your future</p>
+        </div>
+        
+        <div class="form-container">
+            <form action="{{ url_for('predict_college') }}" method="post" class="needs-validation" novalidate>
+                <div class="mb-4">
+                    <h4><i class="fas fa-user-circle me-2 text-info"></i> About You</h4>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-briefcase me-2 text-info"></i> Activities & Skills</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="activity" class="form-label">What type of activities do you prefer?</label>
+                        <select class="form-select" id="activity" name="activity" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in activity_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an activity.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="skill" class="form-label">Which skill would you like to develop further?</label>
+                        <select class="form-select" id="skill" name="skill" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in skill_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a skill.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-chart-line me-2 text-info"></i> Career Preferences</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="value" class="form-label">What do you value most in a career?</label>
+                        <select class="form-select" id="value" name="value" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in value_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a value.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="environment" class="form-label">What type of work environment do you prefer?</label>
+                        <select class="form-select" id="environment" name="environment" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in environment_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an environment.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-user-tag me-2 text-info"></i> Self-Assessment</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">How would you describe yourself?</label>
+                        <select class="form-select" id="description" name="description" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in description_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a description.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="working" class="form-label">How do you prefer to work?</label>
+                        <select class="form-select" id="working" name="working" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in working_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a working preference.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-compass me-2 text-info"></i> Future Outlook</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="startup" class="form-label">Are you interested in startups or entrepreneurship?</label>
+                        <select class="form-select" id="startup" name="startup" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in startup_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="industry" class="form-label">Which industry are you most curious about?</label>
+                        <select class="form-select" id="industry" name="industry" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in industry_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an industry.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="vision" class="form-label">What is your vision for the next 5 years?</label>
+                        <select class="form-select" id="vision" name="vision" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in vision_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a vision.</div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-info btn-lg px-5">
+                        Get My Recommendation
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="text-center mt-4">
+                <a href="{{ url_for('choice') }}" class="btn btn-link">
+                    <i class="fas fa-arrow-left me-2"></i> Back to Selection
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+{% block title %}Contact Us - Career Path Finder{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Contact Us</h1>
+            <p class="lead text-muted">Get in touch with our team for questions, feedback, or support</p>
+        </div>
+        
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">Send Us a Message</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select class="form-select" id="subject">
+                            <option selected disabled>Select a subject</option>
+                            <option>General Inquiry</option>
+                            <option>Technical Support</option>
+                            <option>Feedback</option>
+                            <option>Partnership</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-info">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">Contact Information</h3>
+                <div class="card bg-dark border-0 mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex mb-4">
+                            <div class="me-3 text-info">
+                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Our Location</h5>
+                                <p class="text-muted mb-0">123 Education Lane, Knowledge City<br>Career State, 100001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-3 text-info">
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p class="text-muted mb-0">info@careerpathfinder.com<br>support@careerpathfinder.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <div class="me-3 text-info">
+                                <i class="fas fa-phone-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p class="text-muted mb-0">+1 (555) 123-4567<br>+1 (555) 765-4321</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="fw-bold mb-4">Follow Us</h3>
+                <div class="card bg-dark border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-wrap">
+                            <a href="#" class="btn btn-outline-info me-3 mb-3">
+                                <i class="fab fa-facebook-f me-2"></i> Facebook
+                            </a>
+                            <a href="#" class="btn btn-outline-info me-3 mb-3">
+                                <i class="fab fa-twitter me-2"></i> Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline-info me-3 mb-3">
+                                <i class="fab fa-linkedin-in me-2"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-outline-info mb-3">
+                                <i class="fab fa-instagram me-2"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <h3 class="fw-bold mb-4">Frequently Asked Questions</h3>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item bg-dark border-0 mb-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How accurate are the career recommendations?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Our recommendations are based on advanced machine learning algorithms trained on real-world data. While they provide valuable guidance, they should be considered as one input in your decision-making process alongside other factors like career counseling and personal research.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item bg-dark border-0 mb-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Is my data private and secure?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes, we take data privacy seriously. Your assessment responses are only used to generate your personal recommendations and to improve our algorithm. We do not share your personal information with third parties.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item bg-dark border-0">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Can I retake the assessment?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Absolutely! You can retake the assessment as many times as you like. As your interests and preferences evolve, it's a good idea to reassess periodically to see if different career paths might be a better fit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

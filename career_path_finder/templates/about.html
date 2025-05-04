@@ -1,0 +1,195 @@
+{% extends 'layout.html' %}
+
+{% block title %}About Us - NextStep{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">About NextStep</h1>
+            <p class="lead text-muted">Discover the story and technology behind our career recommendation system</p>
+        </div>
+        
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fw-bold mb-4">Our Mission</h2>
+                <p>At NextStep, we believe that everyone deserves to find a career path that aligns with their unique combination of interests, skills, and values. Our mission is to use data-driven approaches to help students make informed decisions about their academic and professional futures.</p>
+                <p>We aim to reduce career confusion and empower students to pursue paths where they can truly excel and find fulfillment.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <svg width="400" height="300" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                       
+                        <defs>
+                            <linearGradient id="lightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#0dcaf0;stop-opacity:0.7" />
+                                <stop offset="100%" style="stop-color:#0dcaf0;stop-opacity:0.1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        
+                        <circle cx="300" cy="200" r="150" fill="none" stroke="#0dcaf0" stroke-width="8" opacity="0.2" />
+                        <circle cx="300" cy="200" r="130" fill="none" stroke="#0dcaf0" stroke-width="3" opacity="0.4" />
+                        
+                       
+                        <g transform="rotate(45, 300, 200)">
+                            <line x1="300" y1="90" x2="300" y2="310" stroke="#fff" stroke-width="3" />
+                            <polygon points="300,80 310,100 290,100" fill="#fff" />
+                            <polygon points="300,320 290,300 310,300" fill="#0dcaf0" />
+                        </g>
+                        
+                       
+                        <circle cx="300" cy="200" r="30" fill="#212529" stroke="#0dcaf0" stroke-width="2" />
+                        
+                        
+                        <text x="300" y="60" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">N</text>
+                        <text x="300" y="350" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">S</text>
+                        <text x="450" y="205" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">E</text>
+                        <text x="150" y="205" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">W</text>
+                        
+                       
+                        <path d="M300,200 L480,80" stroke="url(#lightGrad)" stroke-width="40" stroke-linecap="round" opacity="0.6" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="fw-bold mb-4 text-center">Our Approach</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card bg-dark h-100 border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-robot text-info fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">Machine Learning</h4>
+                                <p class="card-text text-muted">We use advanced machine learning algorithms, including Random Forest, to analyze patterns in career satisfaction and success.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark h-100 border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-database text-info fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">Data-Driven</h4>
+                                <p class="card-text text-muted">Our recommendations are based on real-world data from students and professionals across various fields and industries.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark h-100 border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-user-check text-info fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">Personalized</h4>
+                                <p class="card-text text-muted">We recognize that every student is unique, so our system creates personalized recommendations based on individual responses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                <h2 class="fw-bold mb-4">How Our Algorithm Works</h2>
+                <p>NextStep uses a sophisticated Random Forest machine learning algorithm to analyze your responses and match them with potential career paths.</p>
+                <ol>
+                    <li class="mb-2"><strong>Data Collection:</strong> We gather information about your interests, skills, values, and preferences through our assessment.</li>
+                    <li class="mb-2"><strong>Feature Analysis:</strong> Our algorithm analyzes which factors are most predictive of success in different paths.</li>
+                    <li class="mb-2"><strong>Pattern Recognition:</strong> The system identifies patterns in your responses that match successful profiles in various fields.</li>
+                    <li class="mb-2"><strong>Recommendation Generation:</strong> Based on this analysis, we provide personalized recommendations for your academic or career path.</li>
+                </ol>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="text-center">
+                    <svg width="400" height="300" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                      
+                        <defs>
+                            <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#0dcaf0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0d6efd;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                      
+                        <g transform="translate(100, 40)">
+                      
+                            <circle cx="0" cy="0" r="20" fill="url(#nodeGrad)" />
+                            <line x1="0" y1="20" x2="-60" y2="80" stroke="#0dcaf0" stroke-width="2" />
+                            <line x1="0" y1="20" x2="60" y2="80" stroke="#0dcaf0" stroke-width="2" />
+                            <circle cx="-60" cy="80" r="15" fill="url(#nodeGrad)" />
+                            <circle cx="60" cy="80" r="15" fill="url(#nodeGrad)" />
+                            <line x1="-60" y1="95" x2="-90" y2="135" stroke="#0dcaf0" stroke-width="2" />
+                            <line x1="-60" y1="95" x2="-30" y2="135" stroke="#0dcaf0" stroke-width="2" />
+                            <line x1="60" y1="95" x2="30" y2="135" stroke="#0dcaf0" stroke-width="2" />
+                            <line x1="60" y1="95" x2="90" y2="135" stroke="#0dcaf0" stroke-width="2" />
+                            <circle cx="-90" cy="135" r="10" fill="url(#nodeGrad)" />
+                            <circle cx="-30" cy="135" r="10" fill="url(#nodeGrad)" />
+                            <circle cx="30" cy="135" r="10" fill="url(#nodeGrad)" />
+                            <circle cx="90" cy="135" r="10" fill="url(#nodeGrad)" />
+                        </g>
+                        
+                        <g transform="translate(300, 40)">
+                           
+                            <circle cx="0" cy="0" r="20" fill="url(#nodeGrad)" opacity="0.8" />
+                            <line x1="0" y1="20" x2="-60" y2="80" stroke="#0dcaf0" stroke-width="2" opacity="0.8" />
+                            <line x1="0" y1="20" x2="60" y2="80" stroke="#0dcaf0" stroke-width="2" opacity="0.8" />
+                            <circle cx="-60" cy="80" r="15" fill="url(#nodeGrad)" opacity="0.8" />
+                            <circle cx="60" cy="80" r="15" fill="url(#nodeGrad)" opacity="0.8" />
+                            <line x1="-60" y1="95" x2="-90" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.8" />
+                            <line x1="-60" y1="95" x2="-30" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.8" />
+                            <line x1="60" y1="95" x2="30" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.8" />
+                            <line x1="60" y1="95" x2="90" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.8" />
+                            <circle cx="-90" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.8" />
+                            <circle cx="-30" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.8" />
+                            <circle cx="30" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.8" />
+                            <circle cx="90" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.8" />
+                        </g>
+                        
+                        <g transform="translate(500, 40)">
+                            
+                            <circle cx="0" cy="0" r="20" fill="url(#nodeGrad)" opacity="0.6" />
+                            <line x1="0" y1="20" x2="-60" y2="80" stroke="#0dcaf0" stroke-width="2" opacity="0.6" />
+                            <line x1="0" y1="20" x2="60" y2="80" stroke="#0dcaf0" stroke-width="2" opacity="0.6" />
+                            <circle cx="-60" cy="80" r="15" fill="url(#nodeGrad)" opacity="0.6" />
+                            <circle cx="60" cy="80" r="15" fill="url(#nodeGrad)" opacity="0.6" />
+                            <line x1="-60" y1="95" x2="-90" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.6" />
+                            <line x1="-60" y1="95" x2="-30" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.6" />
+                            <line x1="60" y1="95" x2="30" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.6" />
+                            <line x1="60" y1="95" x2="90" y2="135" stroke="#0dcaf0" stroke-width="2" opacity="0.6" />
+                            <circle cx="-90" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.6" />
+                            <circle cx="-30" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.6" />
+                            <circle cx="30" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.6" />
+                            <circle cx="90" cy="135" r="10" fill="url(#nodeGrad)" opacity="0.6" />
+                        </g>
+                      
+                        <g transform="translate(300, 230)">
+                            <rect x="-100" y="0" width="200" height="40" rx="5" fill="none" stroke="#0dcaf0" stroke-width="2" />
+                            <text x="0" y="25" text-anchor="middle" fill="#fff" font-size="18">Aggregation</text>
+                            
+                            <line x1="0" y1="40" x2="0" y2="70" stroke="#0dcaf0" stroke-width="3" />
+                            <polygon points="0,80 -10,65 10,65" fill="#0dcaf0" />
+                            
+                            <rect x="-120" y="90" width="240" height="50" rx="5" fill="url(#nodeGrad)" opacity="0.8" />
+                            <text x="0" y="120" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Career Recommendation</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold mb-4">Ready to Find Your Path?</h2>
+                <p class="lead mb-4">Take our assessment and discover the academic or career path that's right for you.</p>
+                <a href="{{ url_for('choice') }}" class="btn btn-info btn-lg px-5">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

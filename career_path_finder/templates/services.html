@@ -1,0 +1,265 @@
+{% extends 'layout.html' %}
+
+{% block title %}Our Services - NextStep{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Our Services</h1>
+            <p class="lead text-muted">Comprehensive career guidance solutions for students at every stage</p>
+        </div>
+        
+        <!-- Main Services -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-6">
+                <div class="card bg-dark h-100 border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-school text-info fa-3x"></i>
+                            </div>
+                            <h3 class="card-title mb-0">School Student Guidance</h3>
+                        </div>
+                        <p class="card-text">Our school guidance service helps students in 10th grade make informed decisions about their academic streams for 11th and 12th grades. Using our AI-powered recommendation system, we analyze students' interests, aptitudes, and preferences to suggest the most suitable stream that will set them up for future success.</p>
+                        <h5 class="mt-4 mb-3">Features:</h5>
+                        <ul class="text-muted">
+                            <li>Stream recommendation (Science, Commerce, Humanities, etc.)</li>
+                            <li>Subject combination suggestions</li>
+                            <li>Identification of academic strengths</li>
+                            <li>Long-term career path projections</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="{{ url_for('school_form') }}" class="btn btn-info">Take School Assessment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card bg-dark h-100 border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-graduation-cap text-info fa-3x"></i>
+                            </div>
+                            <h3 class="card-title mb-0">College Student Guidance</h3>
+                        </div>
+                        <p class="card-text">Our college guidance service assists undergraduate students in identifying optimal career paths based on their interests, skills, and values. Our machine learning algorithm analyzes various factors to recommend specific career fields that align with their personal attributes and professional aspirations.</p>
+                        <h5 class="mt-4 mb-3">Features:</h5>
+                        <ul class="text-muted">
+                            <li>Career field recommendations</li>
+                            <li>Industry-specific insights</li>
+                            <li>Skill development suggestions</li>
+                            <li>Job role compatibility analysis</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="{{ url_for('college_form') }}" class="btn btn-info">Take College Assessment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How It Works -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">How Our Assessment Works</h2>
+            <p class="lead text-muted">A simple process to discover your ideal path</p>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card bg-dark border-0">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 text-center mb-4 mb-lg-0">
+                                <div class="position-relative">
+                                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <span class="fs-2 fw-bold text-dark">1</span>
+                                    </div>
+                                    <h5 class="mb-3">Choose Your Level</h5>
+                                    <p class="text-muted">Select whether you're a school or college student</p>
+                                    
+                                    <div class="position-absolute d-none d-lg-block" style="top: 40px; right: -50%;">
+                                        <i class="fas fa-long-arrow-alt-right text-info fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 text-center mb-4 mb-lg-0">
+                                <div class="position-relative">
+                                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <span class="fs-2 fw-bold text-dark">2</span>
+                                    </div>
+                                    <h5 class="mb-3">Complete Assessment</h5>
+                                    <p class="text-muted">Answer questions about your interests and preferences</p>
+                                    
+                                    <div class="position-absolute d-none d-lg-block" style="top: 40px; right: -50%;">
+                                        <i class="fas fa-long-arrow-alt-right text-info fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 text-center mb-4 mb-md-0">
+                                <div class="position-relative">
+                                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <span class="fs-2 fw-bold text-dark">3</span>
+                                    </div>
+                                    <h5 class="mb-3">AI Analysis</h5>
+                                    <p class="text-muted">Our algorithm analyzes your responses</p>
+                                    
+                                    <div class="position-absolute d-none d-lg-block" style="top: 40px; right: -50%;">
+                                        <i class="fas fa-long-arrow-alt-right text-info fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <div>
+                                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <span class="fs-2 fw-bold text-dark">4</span>
+                                    </div>
+                                    <h5 class="mb-3">Get Recommendations</h5>
+                                    <p class="text-muted">Receive personalized career path guidance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technology Behind -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fw-bold mb-4">The Technology Behind Our Service</h2>
+                <p>Our career recommendation system is powered by advanced technologies:</p>
+                
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-info">
+                        <i class="fas fa-tree fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Random Forest Algorithm</h5>
+                        <p class="text-muted">Our core prediction engine uses Random Forest, an ensemble learning method that operates by constructing multiple decision trees during training and outputting the class that is the mode of the classes of the individual trees.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-info">
+                        <i class="fas fa-database fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Data-Driven Recommendations</h5>
+                        <p class="text-muted">Our system is trained on real-world data from students who have successfully pursued various career paths, ensuring our recommendations are grounded in actual outcomes.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex">
+                    <div class="me-3 text-info">
+                        <i class="fas fa-chart-bar fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Feature Importance Analysis</h5>
+                        <p class="text-muted">We analyze which factors are most predictive of success in different paths, providing insights into why certain careers are recommended for you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card bg-dark border-0">
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <svg width="400" height="300" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Random Forest Visualization -->
+                                <defs>
+                                    <linearGradient id="techGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#0dcaf0;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0d6efd;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Forest Background -->
+                                <rect x="50" y="50" width="500" height="300" rx="10" fill="#212529" stroke="#0dcaf0" stroke-width="2" />
+                                
+                                <!-- Trees -->
+                                <g transform="translate(100, 100)">
+                                    <polygon points="0,0 20,0 10,-30" fill="url(#techGrad)" opacity="0.8" />
+                                    <polygon points="0,0 20,0 10,-20" fill="url(#techGrad)" opacity="0.9" />
+                                    <rect x="7" y="0" width="6" height="20" fill="#6c757d" />
+                                </g>
+                                
+                                <g transform="translate(150, 120)">
+                                    <polygon points="0,0 25,0 12,-40" fill="url(#techGrad)" opacity="0.7" />
+                                    <polygon points="0,0 25,0 12,-25" fill="url(#techGrad)" opacity="0.8" />
+                                    <rect x="10" y="0" width="6" height="25" fill="#6c757d" />
+                                </g>
+                                
+                                <g transform="translate(220, 90)">
+                                    <polygon points="0,0 30,0 15,-45" fill="url(#techGrad)" opacity="0.9" />
+                                    <polygon points="0,0 30,0 15,-30" fill="url(#techGrad)" opacity="1" />
+                                    <rect x="12" y="0" width="6" height="30" fill="#6c757d" />
+                                </g>
+                                
+                                <g transform="translate(290, 110)">
+                                    <polygon points="0,0 22,0 11,-35" fill="url(#techGrad)" opacity="0.8" />
+                                    <polygon points="0,0 22,0 11,-20" fill="url(#techGrad)" opacity="0.9" />
+                                    <rect x="9" y="0" width="5" height="22" fill="#6c757d" />
+                                </g>
+                                
+                                <g transform="translate(360, 100)">
+                                    <polygon points="0,0 28,0 14,-42" fill="url(#techGrad)" opacity="0.7" />
+                                    <polygon points="0,0 28,0 14,-28" fill="url(#techGrad)" opacity="0.8" />
+                                    <rect x="11" y="0" width="6" height="27" fill="#6c757d" />
+                                </g>
+                                
+                                <g transform="translate(430, 130)">
+                                    <polygon points="0,0 20,0 10,-30" fill="url(#techGrad)" opacity="0.9" />
+                                    <polygon points="0,0 20,0 10,-18" fill="url(#techGrad)" opacity="1" />
+                                    <rect x="7" y="0" width="6" height="20" fill="#6c757d" />
+                                </g>
+                                
+                                <!-- Ground Line -->
+                                <line x1="80" y1="150" x2="520" y2="150" stroke="#6c757d" stroke-width="2" />
+                                
+                                <!-- Data Points -->
+                                <g transform="translate(100, 200)">
+                                    <circle cx="0" cy="0" r="5" fill="#0dcaf0" />
+                                    <circle cx="40" cy="20" r="5" fill="#0dcaf0" />
+                                    <circle cx="80" cy="-10" r="5" fill="#0dcaf0" />
+                                    <circle cx="120" cy="30" r="5" fill="#0dcaf0" />
+                                    <circle cx="160" cy="0" r="5" fill="#0dcaf0" />
+                                    <circle cx="200" cy="-20" r="5" fill="#0dcaf0" />
+                                    <circle cx="240" cy="10" r="5" fill="#0dcaf0" />
+                                    <circle cx="280" cy="-5" r="5" fill="#0dcaf0" />
+                                    <circle cx="320" cy="15" r="5" fill="#0dcaf0" />
+                                    <circle cx="360" cy="-15" r="5" fill="#0dcaf0" />
+                                </g>
+                                
+                                <!-- Decision Boundaries -->
+                                <path d="M100,230 C150,200 200,240 250,190 C300,220 350,180 400,210" stroke="#fff" stroke-width="2" fill="none" stroke-dasharray="5,5" />
+                                
+                                <!-- Labels -->
+                                <text x="300" y="270" text-anchor="middle" fill="#fff" font-size="18">Random Forest Model</text>
+                                <text x="300" y="300" text-anchor="middle" fill="#ccc" font-size="14">Multiple Decision Trees for Accurate Predictions</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card bg-info text-dark p-5">
+                    <h2 class="fw-bold mb-3">Ready to Discover Your Ideal Path?</h2>
+                    <p class="lead mb-4">Our AI-powered assessment will help you find the perfect career direction</p>
+                    <div>
+                        <a href="{{ url_for('choice') }}" class="btn btn-dark btn-lg px-5">Start Your Assessment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

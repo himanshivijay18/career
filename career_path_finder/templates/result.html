@@ -1,0 +1,159 @@
+{% extends 'layout.html' %}
+
+{% block title %}Your Career Recommendation - NextStep{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Your Personalized Recommendation</h1>
+            <p class="lead text-muted">Based on your responses, we've analyzed the best path for your future</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Main Result Card -->
+                <div class="result-card">
+                    <div class="text-center mb-4">
+                        {% if student_type == 'school' %}
+                        <div class="mb-3">
+                            <i class="fas fa-graduation-cap text-info fa-4x" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Recommended Stream for 11th & 12th</h2>
+                        {% else %}
+                        <div class="mb-3">
+                            <i class="fas fa-briefcase text-info fa-4x" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Recommended Career Path</h2>
+                        {% endif %}
+                        
+                        <h3 class="display-5 text-info mb-4">{{ prediction }}</h3>
+                        
+                        {% if top_features %}
+                        <div class="d-flex flex-wrap justify-content-center mb-4">
+                            {% for feature in top_features %}
+                            <span class="badge rounded-pill feature-pill py-2 px-3">{{ feature }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <p class="lead">{{ path_explanation }}</p>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <h4 class="mb-3"><i class="fas fa-lightbulb text-warning me-2" aria-hidden="true"></i> What This Means For You</h4>
+                            {% if student_type == 'school' %}
+                            <p>Based on your interests, skills, and preferences, we recommend that you pursue <strong>{{ prediction }}</strong> for your 11th and 12th grades. This stream aligns well with your natural abilities and can provide a strong foundation for future career paths.</p>
+                            {% else %}
+                            <p>Based on your interests, skills, and preferences, we recommend that you pursue a career in <strong>{{ prediction }}</strong>. This path aligns well with your strengths and can provide opportunities that match your values and work style.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h4 class="mb-3"><i class="fas fa-map-signs text-success me-2" aria-hidden="true"></i> Next Steps</h4>
+                            {% if student_type == 'school' %}
+                            <ul class="mb-0">
+                                <li>Research more about the specific subjects in the {{ prediction }} stream</li>
+                                <li>Talk to teachers or counselors about your subject choices</li>
+                                <li>Connect with students who are currently studying in this stream</li>
+                                <li>Explore colleges and universities that offer strong programs in this area</li>
+                                <li>Develop skills related to this stream through online courses or workshops</li>
+                            </ul>
+                            {% else %}
+                            <ul class="mb-0">
+                                <li>Research specific job roles within the {{ prediction }} field</li>
+                                <li>Identify the skills and qualifications needed for this career path</li>
+                                <li>Look for internships or entry-level positions in this domain</li>
+                                <li>Connect with professionals currently working in this field</li>
+                                <li>Consider additional courses or certifications to enhance your profile</li>
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Resources Card -->
+                <div class="result-card mt-4">
+                    <h4 class="mb-4"><i class="fas fa-book-reader text-info me-2" aria-hidden="true"></i> Additional Resources</h4>
+                    
+                    {% if student_type == 'school' %}
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 bg-dark border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Online Learning Platforms</h5>
+                                    <p class="card-text text-muted">Explore subjects in your recommended stream</p>
+                                    <ul class="text-muted">
+                                        <li>Khan Academy</li>
+                                        <li>Coursera</li>
+                                        <li>edX</li>
+                                        <li>Byju's</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 bg-dark border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Career Exploration</h5>
+                                    <p class="card-text text-muted">Research potential careers after this stream</p>
+                                    <ul class="text-muted">
+                                        <li>MyFuture.com</li>
+                                        <li>CareerGuide.com</li>
+                                        <li>National Career Service</li>
+                                        <li>LinkedIn Learning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 bg-dark border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Job Search Platforms</h5>
+                                    <p class="card-text text-muted">Find opportunities in your recommended field</p>
+                                    <ul class="text-muted">
+                                        <li>LinkedIn</li>
+                                        <li>Indeed</li>
+                                        <li>Glassdoor</li>
+                                        <li>Naukri.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 bg-dark border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Skill Development</h5>
+                                    <p class="card-text text-muted">Enhance your profile with relevant skills</p>
+                                    <ul class="text-muted">
+                                        <li>Udemy</li>
+                                        <li>LinkedIn Learning</li>
+                                        <li>Coursera</li>
+                                        <li>Pluralsight</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('choice') }}" class="btn btn-outline-info me-3">
+                        <i class="fas fa-redo me-2" aria-hidden="true"></i> Try Again
+                    </a>
+                    <a href="{{ url_for('index') }}" class="btn btn-info">
+                        <i class="fas fa-home me-2" aria-hidden="true"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

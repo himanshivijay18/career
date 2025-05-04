@@ -1,0 +1,209 @@
+{% extends 'layout.html' %}
+
+{% block title %}School Student Assessment -NextStep{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">School Student Assessment</h1>
+            <p class="lead text-muted">Answer the questions below to help us recommend the best subject stream for your 11th & 12th grades</p>
+        </div>
+        
+        <div class="form-container">
+            <form action="{{ url_for('predict_school') }}" method="post" class="needs-validation" novalidate>
+                <div class="mb-4">
+                    <h4><i class="fas fa-user-circle me-2 text-info"></i> About You</h4>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-book me-2 text-info"></i> Academic Interests</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Which subject do you enjoy the most in school?</label>
+                        <select class="form-select" id="subject" name="subject" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in subject_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a subject.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="topic" class="form-label">What topics interest you the most?</label>
+                        <select class="form-select" id="topic" name="topic" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in topic_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a topic.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-lightbulb me-2 text-info"></i> Activities & Talents</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="activity" class="form-label">If you could spend a whole day doing one activity, what would it be?</label>
+                        <select class="form-select" id="activity" name="activity" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in activity_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an activity.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="talent" class="form-label">What natural talent do you think you have?</label>
+                        <select class="form-select" id="talent" name="talent" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in talent_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a talent.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="task" class="form-label">What kind of tasks do you prefer?</label>
+                        <select class="form-select" id="task" name="task" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in task_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a task preference.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="free_time" class="form-label">What do you like to do in your free time?</label>
+                        <select class="form-select" id="free_time" name="free_time" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in free_time_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a free time activity.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-star me-2 text-info"></i> Aspirations & Preferences</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="extracurricular" class="form-label">Do you participate in any extracurricular activities?</label>
+                        <select class="form-select" id="extracurricular" name="extracurricular" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in extracurricular_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="profession" class="form-label">Which profession sounds most exciting to you?</label>
+                        <select class="form-select" id="profession" name="profession" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in profession_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a profession.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="admired" class="form-label">Who do you admire the most?</label>
+                        <select class="form-select" id="admired" name="admired" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in admired_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-brain me-2 text-info"></i> Learning & Work Style</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="learning" class="form-label">How do you learn best?</label>
+                        <select class="form-select" id="learning" name="learning" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in learning_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a learning style.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="work" class="form-label">Do you prefer working alone or with others?</label>
+                        <select class="form-select" id="work" name="work" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in work_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select a work preference.</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4><i class="fas fa-clipboard-check me-2 text-info"></i> Experiences</h4>
+                    <hr>
+                    
+                    <div class="mb-3">
+                        <label for="tried" class="form-label">Have you tried any of these activities?</label>
+                        <select class="form-select" id="tried" name="tried" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in tried_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="inspired" class="form-label">Is there a place that has inspired you?</label>
+                        <select class="form-select" id="inspired" name="inspired" required>
+                            <option value="" selected disabled>Choose...</option>
+                            {% for option in inspired_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-info btn-lg px-5">
+                        Get My Recommendation
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="text-center mt-4">
+                <a href="{{ url_for('choice') }}" class="btn btn-link">
+                    <i class="fas fa-arrow-left me-2"></i> Back to Selection
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

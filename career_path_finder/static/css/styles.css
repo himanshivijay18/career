@@ -1,0 +1,79 @@
+/* Additional custom styles */
+
+/* Hero section styling */
+.hero-section {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bs-dark);
+  position: relative;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+/* Form styling */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--bs-dark);
+}
+
+/* Result card styling */
+.result-card {
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--bs-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Choice cards styling */
+.choice-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.choice-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Feature pills */
+.feature-pill {
+  background-color: var(--bs-info);
+  color: var(--bs-dark);
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Page spacing */
+.page-section {
+  padding: 5rem 0;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem 0;
+  background-color: var(--bs-dark);
+}
+
+/* Navbar active state */
+.navbar-nav .nav-link.active {
+  color: var(--bs-info) !important;
+  font-weight: 600;
+}
+
+/* Misc helpers */
+.text-highlight {
+  color: var(--bs-info);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--bs-dark) 0%, var(--bs-gray-800) 100%);
+}

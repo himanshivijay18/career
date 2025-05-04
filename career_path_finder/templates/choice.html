@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block title %}Choose Your Module - NextStep{% endblock %}
+
+{% block content %}
+<section class="page-section py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Choose Your Module</h1>
+            <p class="lead text-muted">Select the option that best describes your current educational stage</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="card choice-card bg-dark h-100" data-href="{{ url_for('school_form') }}">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4">
+                            <i class="fas fa-school text-info fa-4x"></i>
+                        </div>
+                        <h3 class="card-title mb-3">School Student</h3>
+                        <p class="card-text text-muted">For students in 10th grade looking for stream recommendations for 11th & 12th</p>
+                        <ul class="text-start text-muted mt-4">
+                            <li>Find your ideal subject stream</li>
+                            <li>Discover academic strengths</li>
+                            <li>Guidance for subject selection</li>
+                            <li>Foundation for future career</li>
+                        </ul>
+                        <a href="{{ url_for('school_form') }}" class="btn btn-info mt-4 stretched-link">Continue</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-5">
+                <div class="card choice-card bg-dark h-100" data-href="{{ url_for('college_form') }}">
+                    <div class="card-body text-center p-5">
+                        <div class="mb-4">
+                            <i class="fas fa-graduation-cap text-info fa-4x"></i>
+                        </div>
+                        <h3 class="card-title mb-3">College Student</h3>
+                        <p class="card-text text-muted">For college students seeking career path recommendations after graduation</p>
+                        <ul class="text-start text-muted mt-4">
+                            <li>Identify best career paths</li>
+                            <li>Match skills to professions</li>
+                            <li>Industry-specific guidance</li>
+                            <li>Job role recommendations</li>
+                        </ul>
+                        <a href="{{ url_for('college_form') }}" class="btn btn-info mt-4 stretched-link">Continue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <p class="text-muted">Not sure which one to choose? Select based on your current educational level.</p>
+            <a href="{{ url_for('index') }}" class="btn btn-link">
+                <i class="fas fa-arrow-left me-2"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
